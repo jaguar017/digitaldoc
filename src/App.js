@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import FileUpload from './FileUpload/FileUpload.jsx';
+import FileList from './FileList/FileList';
 function App() {
+  const [files,setFiles]= useState([])
+
+  function removeFile(filename){
+
+    setFiles(files.filter(file => file.name !== filename))
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p className='title'>Upload File</p>
+      <h1> hi hii Hello </h1>
+      <FileUpload files={files} setFiles={setFiles} removeFile={removeFile}/>
+      <FileList files={files} removeFiles={removeFile} />
     </div>
   );
 }
