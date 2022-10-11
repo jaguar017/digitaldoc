@@ -14,9 +14,8 @@ function App() {
   return (
     <div className="App">
       <p className='title'>Upload File</p>
-      <h1> hi hii Hello </h1>
       <FileUpload files={files} setFiles={setFiles} removeFile={removeFile}/>
-      <FileSearch files={files} setFiles={setFiles}/>
+      <FileSearch files={files}/>
       <FileList files={files} removeFiles={removeFile} />
     </div>
   );
